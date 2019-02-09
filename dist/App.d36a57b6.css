@@ -1,0 +1,135 @@
+/********************************/
+/*                              */
+/*           GENERALE           */
+/*                              */
+/********************************/
+
+html{
+	font-family: 'Quotable';
+	font-size: 62.5%;
+}
+
+
+body{
+
+	display: flex;
+	justify-content: center;
+	background-color: #fc402e;
+}
+
+@font-face{
+	font-family: 'Quotable'; 
+	src: url("Quotable.47b85ace.otf") format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.all{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+}
+
+
+/********************************/
+/*                              */
+/*             TITRE            */
+/*                              */
+/********************************/
+h1{
+	font-size: 8rem;
+}
+
+.titre{
+	display: flex;
+	align-items: center;
+}
+
+
+/********************************/
+/*                              */
+/*          CONTAINER           */
+/*                              */
+/********************************/
+
+.container_main{
+	box-shadow: 1px 1px 12px #313231;
+	font-size: 2rem;
+	border: thick double black;
+	border-radius: 0.3rem;
+	display: flex;
+	width: 500px;
+	height: 150px;
+/*	margin-top: 30%;*/
+}
+
+.container{
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.display{
+	font-size: 13rem;
+/*	align-items: center;*/
+	width: 400px;
+}
+
+.controls{
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.but{
+
+	width: 100px;
+	height: 50px;
+}
+
+.addTime{
+
+	background-color: none;
+}
+
+/********************************/
+/*                              */
+/*            BUTTON            */
+/*                              */
+/********************************/
+
+.bt{
+	font-family: 'Quotable';
+	cursor: pointer;
+	justify-content: center;
+	align-items: center;
+	background-color: transparent;
+	border: none;
+}
+
+
+.bt:focus{
+	outline:0;
+}
+.add, .less{
+
+	font-size: 4rem;
+}
+
+.add:hover, .less:hover{
+	font-size: 8rem;
+}
+.start{
+
+	font-size: 2.5rem;
+}
+
+.start:hover{
+	font-size: 5rem;
+}
+
+
