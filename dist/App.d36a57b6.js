@@ -24530,7 +24530,7 @@ function (_React$Component) {
         id: "AddTime"
       }, _react.default.createElement("button", {
         disabled: this.props.value,
-        onClick: this.props.time,
+        onClick: this.props.timeAdd,
         className: "bt add"
       }, "+"));
     }
@@ -24588,7 +24588,7 @@ function (_React$Component) {
         id: "LessTime"
       }, _react.default.createElement("button", {
         disabled: this.props.value,
-        onClick: this.props.time2,
+        onClick: this.props.timeLess,
         className: " bt less"
       }, "-"));
     }
@@ -24704,7 +24704,71 @@ function (_React$Component) {
 }(_react.default.Component);
 },{"react":"node_modules/react/index.js"}],"src/img/tomato.png":[function(require,module,exports) {
 module.exports = "/tomato.302e65fe.png";
-},{}],"src/components/Timer.js":[function(require,module,exports) {
+},{}],"src/components/Restart.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _tomato = _interopRequireDefault(require("../img/tomato.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Restart =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Restart, _React$Component);
+
+  function Restart() {
+    _classCallCheck(this, Restart);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Restart).apply(this, arguments));
+  }
+
+  _createClass(Restart, [{
+    key: "render",
+    value: function render() {
+      return _react.default.createElement("div", {
+        id: "Restart"
+      }, _react.default.createElement("button", {
+        className: "bt restartTitle",
+        onClick: this.props.timeRestart,
+        title: "RESTART"
+      }, _react.default.createElement("img", {
+        src: _tomato.default
+      })));
+    }
+  }]);
+
+  return Restart;
+}(_react.default.Component);
+
+exports.default = Restart;
+},{"react":"node_modules/react/index.js","../img/tomato.png":"src/img/tomato.png"}],"src/components/Timer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24722,7 +24786,7 @@ var _StartButton = _interopRequireDefault(require("../components/StartButton"));
 
 var _StopButton = _interopRequireDefault(require("../components/StopButton"));
 
-var _tomato = _interopRequireDefault(require("../img/tomato.png"));
+var _Restart = _interopRequireDefault(require("../components/Restart"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24760,12 +24824,18 @@ function (_React$Component) {
     _this.state = {
       value: false,
       timeMin: 25,
-      timeSec: 0,
+      timeSec: "0" + 0,
       isToggleOn: true
     };
     _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
-  }
+  } // convert(x){
+  // 	if(x < 10){
+  // 		x = "0"+x;
+  // 	}
+  // 	return x;
+  // }
+
 
   _createClass(Timer, [{
     key: "addTime",
@@ -24788,6 +24858,11 @@ function (_React$Component) {
       }
     }
   }, {
+    key: "Restart",
+    value: function Restart() {
+      document.location.reload(true);
+    }
+  }, {
     key: "handleClick",
     value: function handleClick() {
       var _this2 = this;
@@ -24797,15 +24872,26 @@ function (_React$Component) {
           isToggleOn: !prevState.isToggleOn
         };
       });
+      this.state.timeSec = 3;
 
-      if (this.state.isToggleOn == false) {
+      if (this.state.isToggleOn == true) {
         this.SecID = setInterval(function () {
           _this2.setState({
             timeSec: _this2.state.timeSec - 1
           });
 
           if (_this2.state.timeSec <= 0) {
-            _this2.state.timeMin - 1;
+            _this2.state.timeMin--;
+            _this2.state.timeSec = 3;
+          }
+
+          if (_this2.state.isToggleOn == true) {
+            clearInterval(_this2.SecID);
+            _this2.state.timeSec = _this2.state.timeSec;
+          }
+
+          if (_this2.state.timeSec === 3 && _this2.state.timeMin === -1) {
+            clearInterval(_this2.SecID);
           }
         }, 1000);
       } else {
@@ -24821,8 +24907,10 @@ function (_React$Component) {
         className: "App all"
       }, _react.default.createElement("div", {
         className: "titre"
-      }, _react.default.createElement("img", {
-        src: _tomato.default
+      }, _react.default.createElement(_Restart.default, {
+        timeRestart: function timeRestart() {
+          return _this3.Restart();
+        }
       }), _react.default.createElement("h1", null, " Pumadoru ")), _react.default.createElement("div", {
         className: "container_main"
       }, _react.default.createElement("div", {
@@ -24833,7 +24921,7 @@ function (_React$Component) {
         className: "container but addTime"
       }, _react.default.createElement(_AddTime.default, {
         value: this.state.value,
-        time: function time() {
+        timeAdd: function timeAdd() {
           return _this3.addTime();
         }
       })), _react.default.createElement("div", {
@@ -24847,7 +24935,7 @@ function (_React$Component) {
         className: "container but lessTime"
       }, _react.default.createElement(_LessTime.default, {
         value: this.state.value,
-        time2: function time2() {
+        timeLess: function timeLess() {
           return _this3.lessTime();
         }
       })))));
@@ -24858,7 +24946,7 @@ function (_React$Component) {
 }(_react.default.Component);
 
 exports.default = Timer;
-},{"react":"node_modules/react/index.js","../components/AddTime":"src/components/AddTime.js","../components/LessTime":"src/components/LessTime.js","../components/StartButton":"src/components/StartButton.js","../components/StopButton":"src/components/StopButton.js","../img/tomato.png":"src/img/tomato.png"}],"../../../.npm-packages/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/AddTime":"src/components/AddTime.js","../components/LessTime":"src/components/LessTime.js","../components/StartButton":"src/components/StartButton.js","../components/StopButton":"src/components/StopButton.js","../components/Restart":"src/components/Restart.js"}],"../../../.npm-packages/lib/node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
 var bundleURL = null;
 
 function getBundleURLCached() {
@@ -24971,7 +25059,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49272" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49798" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

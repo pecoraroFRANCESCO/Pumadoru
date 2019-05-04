@@ -6,7 +6,7 @@
 
 html{
 	font-family: 'Quotable';
-	font-size: 62.5%;
+
 }
 
 
@@ -15,6 +15,7 @@ body{
 	display: flex;
 	justify-content: center;
 	background-color: #fc402e;
+		font-size: 62.5%;
 }
 
 @font-face{
@@ -39,12 +40,34 @@ body{
 /*                              */
 /********************************/
 h1{
-	font-size: 8rem;
+	font-size: 4rem;
 }
 
 .titre{
 	display: flex;
 	align-items: center;
+
+}
+
+button.restartTitle[title]:hover::before{
+
+content: attr(title);
+  position: absolute;
+  bottom: -26px;
+  display: inline-block;
+  padding: 3px 6px;
+  border-radius: 2px;
+  background: #000;
+  color: #fff;
+  font-size: 2rem;
+  font-family: sans-serif;
+  white-space: nowrap;
+}
+
+button.restartTitle[title]:hover::after{
+	font-size: 2rem;
+	content: '';
+	background-color: yellow;
 }
 
 
@@ -56,13 +79,13 @@ h1{
 
 .container_main{
 	box-shadow: 1px 1px 12px #313231;
-	font-size: 2rem;
+
 	border: thick double black;
 	border-radius: 0.3rem;
 	display: flex;
 	width: 500px;
 	height: 150px;
-/*	margin-top: 30%;*/
+
 }
 
 .container{
@@ -73,7 +96,7 @@ h1{
 }
 
 .display{
-	font-size: 13rem;
+	font-size: 8rem;
 /*	align-items: center;*/
 	width: 400px;
 }
@@ -117,11 +140,11 @@ h1{
 }
 .add, .less{
 
-	font-size: 4rem;
+	font-size: 2.5rem;
 }
 
 .add:hover, .less:hover{
-	font-size: 8rem;
+	font-size: 5rem;
 }
 .start{
 
@@ -129,7 +152,7 @@ h1{
 }
 
 .start:hover{
-	font-size: 5rem;
+	font-size: 3rem;
 }
 
 
